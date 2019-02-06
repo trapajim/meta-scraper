@@ -28,7 +28,6 @@ function GetMetadata(doc) {
     const ruleSet = ruleSets[key];
 
     metadata[key] = extractMetaData(ruleSet, doc);
-    console.log(metadata);
   });
 
   return metadata;
