@@ -1,23 +1,18 @@
 import MetadataRules from "./metadata-rules.js";
 
 function extractMetaData(ruleSet, doc) {
-  let maxPriority = 0,
-    maxValue = "";
+  let result = "";
 
-  ruleSet.rules.forEach((rule, i) => {
+  ruleSet.rules.some((rule, i) => {
     const [query, handler] = rule;
     const element = doc.querySelector(query);
 
-    if (!element) return;
+    if (!element) return false;
 
-    let priority = ruleSet.rules.length - i;
-
-    if (priority > maxPriority) {
-      maxPriority = priority;
-      maxValue = handler(element);
-    }
+    result = handler(element);
+    return true;
   });
-  return maxValue;
+  return result;
 }
 
 function GetMetadata(doc) {

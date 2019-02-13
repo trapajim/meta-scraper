@@ -5,7 +5,14 @@ const MetadataRules = {
         'meta[property="og:description"]',
         element => element.getAttribute("content")
       ],
-      ['meta[name="description" i]', element => element.getAttribute("content")]
+      [
+        'meta[name="description" i]',
+        element => element.getAttribute("content")
+      ],
+      [
+        'meta[name="twitter:description" i]',
+        element => element.getAttribute("content")
+      ]
     ]
   },
   image: {

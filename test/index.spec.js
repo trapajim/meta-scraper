@@ -4,6 +4,7 @@ import domino from "domino";
 
 describe("Get Metadata", function() {
   const sampleDescription = "Page description";
+  const sampleDescription2 = "Page description 2";
   const sampleImage = "http://www.example.com/sample.png";
   const sampleTitle = "Page Title";
   const sampleKeywords = "sample1, sample2";
@@ -11,6 +12,7 @@ describe("Get Metadata", function() {
   <html lang="en-CA">
   <head>
     <meta property="og:description" content="${sampleDescription}" />
+    <meta property="description" content="${sampleDescription2}" />
     <meta property="og:image" content="${sampleImage}" />
     <meta property="og:title" content="${sampleTitle}" />
     <meta name="keywords" content="${sampleKeywords}">
