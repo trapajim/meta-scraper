@@ -2,7 +2,7 @@
   "name": "meta-scraper",
   "version": "1.0.0",
   "description": "A Javascript library to easily parse the metadata from a web page",
-  "main": "lib/meta-scraperr.js",
+  "main": "lib/meta-scraper.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
