@@ -3,12 +3,11 @@ import MetadataRules from "./metadata-rules.js";
 function extractMetaData(ruleSet, doc) {
   let result = "";
 
-  ruleSet.rules.some((rule, i) => {
+  ruleSet.rules.some(rule => {
     const [query, handler] = rule;
     const element = doc.querySelector(query);
 
     if (!element) return false;
-
     result = handler(element);
     return true;
   });
@@ -17,12 +16,9 @@ function extractMetaData(ruleSet, doc) {
 
 function GetMetadata(doc) {
   const metadata = {};
-  const ruleSets = MetadataRules;
 
-  Object.keys(ruleSets).map(key => {
-    const ruleSet = ruleSets[key];
-
-    metadata[key] = extractMetaData(ruleSet, doc);
+  Object.keys(MetadataRules).map(key => {
+    metadata[key] = extractMetaData(MetadataRules[key], doc);
   });
 
   return metadata;
